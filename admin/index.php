@@ -1,9 +1,10 @@
-<?php
-session_start();
-if ($_SESSION['username'] == '') {
-    header("location:../index.php");
-}
-?>
+c<?php
+    session_start();
+    if ($_SESSION['username'] == '') {
+        header("location:../index.php");
+        exit();
+    }
+    ?>
 <!doctype html>
 <html lang="en">
 
@@ -12,7 +13,7 @@ if ($_SESSION['username'] == '') {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- <base href="praktikum2020"> -->
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-    <title> Praktikum Web 2</title>
+    <title>Praktikum Web 2</title>
     <style>
         body {
             margin-bottom: 6em;
@@ -24,7 +25,6 @@ if ($_SESSION['username'] == '') {
 
         footer {
             position: fixed;
-            /* height: 100px; */
             bottom: 0;
             width: 100%;
             background: #1fb359;
@@ -40,6 +40,7 @@ if ($_SESSION['username'] == '') {
 <body>
     <div class="container-fluid">
         <h3 class="mt-4 mb-4">Aplikasi Data Mahasiswa</h3>
+
         <div class="row">
             <div class="col-md-3 col-sm-12 mb-4">
                 <?php include 'nav.php'; ?>
@@ -52,36 +53,52 @@ if ($_SESSION['username'] == '') {
                     default:
                         include "dashboard.php";
                         break;
-                    case "dashboard";
+                    case "dashboard":
                         include "dashboard.php";
                         break;
-                        // mahasiswa 
-                    case "mahasiswa-show";
+                        // mahasiswa
+                    case "mahasiswa-show":
                         include "../mahasiswa/mahasiswa_show.php";
                         break;
-                    case "mahasiswa-add";
+                    case "mahasiswa-add":
                         include "../mahasiswa/mahasiswa_add.php";
                         break;
-                    case "mahasiswa-edit";
+                    case "mahasiswa-edit":
                         include "../mahasiswa/mahasiswa_edit.php";
                         break;
-                    case "mahasiswa-delete";
-                        include "../mahasiswa/mahasiswa_delete.php.php";
+                    case "mahasiswa-delete":
+                        include "../mahasiswa/mahasiswa_delete.php";
                         break;
-                    case "mahasiswa-update";
+                    case "mahasiswa-update":
                         include "../mahasiswa/mahasiswa_update.php";
                         break;
-                        // user 
-                    case "user-add";
+                    //matakuliah
+                        case "matakuliah-show":
+                        include "../matakuliah/matakuliah_show.php";
+                        break;
+                    case "matakuliah-add":
+                        include "../matakuliah/matakuliah_add.php";
+                        break;
+                    case "matakuliah-edit":
+                        include "../matakuliah/matakuliah_edit.php";
+                        break;
+                    case "matakuliah-delete":
+                        include "../matakuliah/matakuliah_delete.php";
+                        break;
+                    case "matakuliah-update":
+                        include "../matakuliah/matakuliah_update.php";
+                        break;
+                        // user
+                    case "user-add":
                         include "../user/user_add.php";
                         break;
-                    case "user-show";
+                    case "user-show":
                         include "../user/user_show.php";
                         break;
-                    case "user-edit";
+                    case "user-edit":
                         include "../user/user_edit.php";
                         break;
-                    case "user-update";
+                    case "user-update":
                         include "../user/user_update.php";
                         break;
                 }
@@ -90,7 +107,7 @@ if ($_SESSION['username'] == '') {
         </div>
     </div>
     <footer>
-        <div class="container ">
+        <div class="container">
             <span>&copy; <?php echo date('Y'); ?> - FTI UNISKA</span>
         </div>
     </footer>

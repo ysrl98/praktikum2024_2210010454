@@ -6,7 +6,7 @@ if (isset($_POST['Submit'])) {
     $jk = $_POST['jenis_kelamin'];
     $email = $_POST['email'];
     $telepon = $_POST['telepon'];
-    $result = mysqli_query($con, "INSERT INTO mahasiswa(nim,nama,alamat,jenis_kelamin,email,telepon)
+    $result = mysqli_query($con, "INSERT INTO mahasiswa(nim,nama,alamat,jenis_kelamin,email,telepon) 
 VALUES('$nim','$nama','$alamat','$jk','$email','$telepon')");
     header("Location:?page=mahasiswa-show");
 }

@@ -45,6 +45,7 @@ if (isset($_POST['login'])) {
                 <?php endif; ?>
                 <div class="card">
                     <div class="card-header bg-transparent mb-0">
+
                         <h5 class="text-center">Login <span class="font-weight-bold text-primary">User</span></h5>
                     </div>
                     <div class="card-body">

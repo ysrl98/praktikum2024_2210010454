@@ -9,7 +9,7 @@ if (isset($_POST['update'])) {
     $telepon = $_POST['telepon'];
     // update user data
     $result = mysqli_query($con, "UPDATE mahasiswa SET
-nim='$nim',nama='$nama',alamat='$alamat',jenis_kelamin='$jk',email='$email',telepon='$telepon' WHERE id=$id");
+nim='$nim',nama='$nama',alamat='$alamat',jenis_kelamin='$jk',email='$email',telepon='$telepon' WHERE id=$id") or die(mysqli_error($con));
     // Redirect to homepage to display updated user in list
     header("Location:?page=mahasiswa-show");
 }
